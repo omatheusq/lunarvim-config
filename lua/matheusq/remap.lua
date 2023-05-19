@@ -9,7 +9,7 @@ wk.mappings['f'] = {}
 lvim.lsp.buffer_mappings.normal_mode['K'] = nil
 
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":silent w<cr>"
 lvim.keys.normal_mode["K"] = "5k"
 lvim.keys.normal_mode["J"] = "5j"
 lvim.keys.normal_mode["<leader>h"] = "_"
@@ -26,6 +26,11 @@ lvim.keys.normal_mode["<leader>f"] = "<Cmd>Telescope live_grep<CR>"
 lvim.keys.normal_mode["<C-w>"] = "<Cmd>BufferKill<CR>"
 lvim.keys.normal_mode["<leader>i"] = "<Cmd>TypescriptAddMissingImports<CR>"
 lvim.keys.normal_mode["<leader>ir"] = "<Cmd>TypescriptRemoveUnused<CR>"
+lvim.keys.normal_mode["<leader>t"] = "<Cmd>TroubleToggle<CR>"
+lvim.keys.normal_mode["<leader><leader>"] = "]m"
+lvim.keys.normal_mode["<leader>m"] = "[m"
+lvim.keys.normal_mode["<C-k>"] = "<Cmd>lvim.lsp.float()<CR>"
+lvim.lsp.buffer_mappings.normal_mode['H'] = { vim.lsp.buf.hover, "Show documentation" }
 
 lvim.keys.visual_mode["<leader>h"] = "_"
 lvim.keys.visual_mode["<leader>l"] = "$"
@@ -62,3 +67,5 @@ wk.mappings["t"] = {
   name = ' Telescope',
   r = { ':Telescope resume<cr>', 'Resume' },
 }
+
+

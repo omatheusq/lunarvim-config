@@ -24,6 +24,7 @@ vim.g.clipboard = {
     ["*"] = "win32yank.exe -o --lf",
   },
 }
+vim.opt.guicursor = ""
 
 -- vim options
 vim.opt.shiftwidth = 2
@@ -51,12 +52,13 @@ lvim.format_on_save = {
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
 -- -- Change theme settings
--- lvim.colorscheme = "lunar"
+lvim.colorscheme = "tokyonight-night"
+--lvim.colorscheme = "rose-pine"
 
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
+lvim.builtin.nvimtree.setup.view.side = "right"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- Automatically install missing parsers when entering buffer
@@ -131,3 +133,9 @@ lvim.builtin.treesitter.auto_install = true
 --
 -- })
 require("lvim.lsp.manager").setup("angularls")
+local components = require("lvim.core.lualine.components")
+-- lvim.builtin.lualine.sections.lualine_a = {}
+--  lvim.builtin.lualine.sections.lualine_b = {}
+ lvim.builtin.lualine.sections.lualine_c = {}
+ lvim.builtin.lualine.sections.lualine_x = {'diagnostics','filetype' }
+ lvim.builtin.lualine.sections.lualine_z = {}
